@@ -1,0 +1,477 @@
+.container {
+  display: flex;
+  height: 100%;
+  background: #f5f5f5;
+}
+
+.sidebar {
+  width: 300px;
+  background: white;
+  border-right: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebarHeader {
+  padding: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.backBtn {
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.backBtn:hover {
+  color: #667eea;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.tab {
+  flex: 1;
+  min-width: 80px;
+  padding: 0.75rem 0.5rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #666;
+  font-size: 0.8rem;
+  transition: all 0.2s;
+}
+
+.tab:hover {
+  color: #667eea;
+  background: #f8f9fa;
+}
+
+.tab.active {
+  color: #667eea;
+  border-bottom: 2px solid #667eea;
+  font-weight: 500;
+}
+
+.chapterList {
+  flex: 1;
+  overflow: auto;
+  padding: 1rem;
+}
+
+.chapterList h4 {
+  margin: 0 0 1rem 0;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.empty {
+  color: #999;
+  text-align: center;
+  padding: 2rem;
+}
+
+.chapterItem {
+  padding: 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s;
+}
+
+.chapterItem:hover {
+  background: #f5f5f5;
+}
+
+.chapterItem.selected {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.chapterTitle {
+  font-size: 0.9rem;
+}
+
+.chapterStatus {
+  font-size: 0.75rem;
+  color: #999;
+  background: #f0f0f0;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.mainContent {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.editor {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+}
+
+.editorHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.editorHeader h2 {
+  margin: 0;
+  color: #333;
+}
+
+.editorActions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.editorActions button {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+}
+
+.editorActions button:first-child {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.editorActions button:last-child {
+  background: white;
+  color: #667eea;
+  border: 1px solid #667eea;
+}
+
+.editorActions button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.editorArea {
+  flex: 1;
+  display: flex;
+}
+
+.editorArea textarea {
+  flex: 1;
+  padding: 1.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  line-height: 1.8;
+  resize: none;
+  font-family: inherit;
+}
+
+.editorArea textarea:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.viewHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.viewHeader h2 {
+  margin: 0;
+  color: #333;
+}
+
+.addBtn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.addBtn:hover {
+  transform: translateY(-1px);
+}
+
+.addForm {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.addForm input,
+.addForm select,
+.addForm textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.addForm textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.formActions button {
+  padding: 0.5rem 1.25rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  border: 1px solid #e0e0e0;
+  background: white;
+  color: #666;
+}
+
+.formActions button:last-child {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+}
+
+.outlineView,
+.worldView,
+.charactersView,
+.agentsView,
+.exportView {
+  flex: 1;
+  padding: 1.5rem;
+  overflow: auto;
+}
+
+.outlineView h2,
+.worldView h2,
+.charactersView h2,
+.agentsView h2,
+.exportView h2 {
+  margin: 0 0 1.5rem 0;
+  color: #333;
+}
+
+.outlineActions {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.outlineActions input {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.outlineActions input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.outlineActions button {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.outlineActions button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.outlineContent {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  color: #666;
+}
+
+.settingList,
+.characterList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.settingCard,
+.characterCard {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+}
+
+.settingHeader,
+.characterHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.settingHeader h3,
+.characterHeader h3 {
+  margin: 0;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.settingCategory,
+.characterRole {
+  font-size: 0.75rem;
+  background: #e3f2fd;
+  color: #1976d2;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.deleteBtn {
+  background: #ffebee;
+  color: #c62828;
+  border: none;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.deleteBtn:hover {
+  background: #ffcdd2;
+}
+
+.settingRules {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #f0f0f0;
+}
+
+.settingRules ul {
+  margin: 0.5rem 0 0 0;
+  padding-left: 1.5rem;
+}
+
+.worldContent,
+.charactersContent {
+  background: transparent;
+  padding: 0;
+  color: inherit;
+}
+
+.agentsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.agentCard {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.agentCard h3 {
+  margin: 0 0 0.75rem 0;
+  color: #333;
+}
+
+.agentCard p {
+  margin: 0 0 1.25rem 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.agentCard button {
+  width: 100%;
+  padding: 0.75rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.agentCard button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.exportOptions {
+  margin-bottom: 2rem;
+}
+
+.exportBtn {
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.exportBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.exportInfo {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+}
+
+.exportInfo h3 {
+  margin: 0 0 1.5rem 0;
+  color: #333;
+}
+
+.exportInfo p {
+  margin: 0.5rem 0;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 1.2rem;
+  color: #666;
+}

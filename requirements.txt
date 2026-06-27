@@ -1,0 +1,35 @@
+# 小说创作Agent系统 v2.0 依赖速查
+# 完整依赖见 pyproject.toml
+
+# 核心框架
+fastapi>=0.109.0,<1.0.0
+uvicorn>=0.27.0,<1.0.0
+pydantic>=2.0.0,<3.0.0
+pydantic-settings>=2.0.0
+python-multipart>=0.0.6
+websockets>=12.0
+
+# 数据库
+sqlalchemy>=2.0.0,<3.0.0
+aiosqlite>=0.19.0,<1.0.0
+
+# 认证与安全
+python-jose[cryptography]>=3.3.0
+passlib[bcrypt]>=1.7.4
+
+# 配置
+python-dotenv>=1.0.0
+
+# LLM
+openai>=1.0.0,<2.0.0
+tiktoken>=0.5.0
+httpx>=0.26.0
+aiohttp>=3.9.0
+
+# 数值计算
+numpy>=1.26.0
+
+# v2.0 新增：语义记忆 & 中文NLP
+chromadb>=0.4.0
+sentence-transformers>=2.2.0
+jieba>=0.42.1

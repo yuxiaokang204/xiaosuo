@@ -1,0 +1,1 @@
+C:\Users\User\AppData\Local\Programs\Python\Python312\python.exe -c "import sys; sys.path.insert(0, 'd:/trae/novel-agent-system-v1.1.0'); import os; os.chdir('d:/trae/novel-agent-system-v1.1.0'); import uvicorn; uvicorn.run('src.backend.main:app', host='0.0.0.0', port=8080, loop='asyncio', log_level='info')"

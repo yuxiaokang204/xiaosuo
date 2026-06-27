@@ -1,0 +1,44 @@
+[project]
+name = "novel-agent"
+version = "2.0.0"
+description = "AI小说创作Agent系统 v2.0 - 模块化重构版"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.109.0,<1.0.0",
+    "uvicorn>=0.27.0,<1.0.0",
+    "pydantic>=2.0.0,<3.0.0",
+    "pydantic-settings>=2.0.0",
+    "python-multipart>=0.0.6",
+    "websockets>=12.0",
+    "sqlalchemy>=2.0.0,<3.0.0",
+    "aiosqlite>=0.19.0,<1.0.0",
+    "python-jose[cryptography]>=3.3.0",
+    "passlib[bcrypt]>=1.7.4",
+    "python-dotenv>=1.0.0",
+    "openai>=1.0.0,<2.0.0",
+    "tiktoken>=0.5.0",
+    "numpy>=1.26.0",
+    # 以下两个被 llm/client.py 直接使用，此前漏列在依赖中
+    "httpx>=0.26.0",
+    "aiohttp>=3.9.0",
+    # v2.0 新增：语义记忆 & 中文NLP
+    "chromadb>=0.4.0",
+    "sentence-transformers>=2.2.0",
+    "jieba>=0.42.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.23.0",
+    "black>=23.0.0",
+    "isort>=5.12.0",
+    "mypy>=1.7.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
